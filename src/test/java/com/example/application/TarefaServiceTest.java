@@ -24,7 +24,7 @@ public class TarefaServiceTest {
     @Test
     public void deveCadastrarTarefaComSucesso() {
         // Arrange
-        String titulo = "Estudar Java";
+        String titulo = "Estudar muito Java";
         String descricao = "Estudar arquitetura hexagonal em Java";
         Tarefa tarefa = new Tarefa(titulo, descricao);
 
