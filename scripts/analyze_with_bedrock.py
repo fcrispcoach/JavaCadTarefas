@@ -130,7 +130,7 @@ if __name__ == "__main__":
     repository = sys.argv[1]  # Formato: owner/repo
     branch_name = sys.argv[2]
     repo_url = f"https://github.com/{repository}"
-    token = os.getenv('TOKEN')
+    token = os.getenv('GITHUB_TOKEN')
 
     # Verifique se as credenciais da AWS estão disponíveis
     aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
@@ -140,7 +140,5 @@ if __name__ == "__main__":
     print(f"AWS Access Key ID: {'****' if aws_access_key_id else 'Not found'}")
     print(f"AWS Secret Access Key: {'****' if aws_secret_access_key else 'Not found'}")
 
-    analysis = analyze_code_with_claude(branch_name, repo_url, token)
-    print(json.dumps(analysis, indent=4))
     analysis = analyze_code_with_claude(branch_name, repo_url, token)
     print(json.dumps(analysis, indent=4))
